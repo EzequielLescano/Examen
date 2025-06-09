@@ -1,0 +1,34 @@
+#Ejercicio 1: Dado una lista simple de python (array) de 15 superheroes realizar dos funciones recursivas:
+listaHeroes=["Iron Man", "Thor", "Hulk", "Capitan America", "Black Widow", "Hawkeye", "Spider-Man",
+               "Doctor Strange", "Black Panther", "Ant Man", "Wasp", "Scarlet Witch", "Vision", "Falcon", "Winter Soldier"]
+
+#funcion recursiva  para buscar, determinar si Capitan America esta en la lista.
+def buscarHeroe(lista, nombre, cont=0):
+    if cont >= len(lista):
+        return False
+    elif lista[cont] == nombre:
+        return True
+    else:
+        return buscarHeroe(lista, nombre, cont + 1)
+
+#funcion recursiva para listar los superheroes de la lista.
+def listaCompleta(lista, cont=0):
+    if cont >= len(lista):
+        return ""
+    else:
+        return lista[cont] + "   " + listaCompleta(lista, cont + 1)
+
+Buscado = buscarHeroe(listaHeroes,"Black Panther")
+if Buscado == True :
+    print("El heroe esta en la lista")
+else:
+        print("El heroe no está en la lista")
+
+Buscado = buscarHeroe(listaHeroes,"Pantera Negra")
+if Buscado == True :
+    print("El heroe esta en la lista")
+else:
+        print("El heroe no está en la lista")
+
+print("Lista se héroes :")
+print(listaCompleta(listaHeroes))
